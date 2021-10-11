@@ -1,0 +1,21 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BasisIDSdk
+import AVFoundation
+import AVKit
+@_exported import BasisIDSdk
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import _AVKit_SwiftUI
+import _Concurrency
+public func initBasisID(apiKey: Swift.String, apiFormToken: Swift.String, region: Swift.String, callback: ((Swift.String, Swift.String) -> Swift.Void)?) -> SwiftUI.UIHostingController<BasisIDSdk.BasisIDView>
+public struct BasisIDView : SwiftUI.View {
+  public var callback: ((Swift.String, Swift.String) -> Swift.Void)?
+  public init(apiKey: Swift.String, apiFormToken: Swift.String, region: Swift.String, callback: ((Swift.String, Swift.String) -> Swift.Void)?)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s10BasisIDSdk0A6IDViewV4bodyQrvp", 0) __
+}

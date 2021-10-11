@@ -1,0 +1,11 @@
+framework module BasisIDSdk {
+  umbrella header "BasisIDSdk.h"
+
+  export *
+  module * { export * }
+}
+
+module BasisIDSdk.Swift {
+    header "BasisIDSdk-Swift.h"
+    requires objc
+}
