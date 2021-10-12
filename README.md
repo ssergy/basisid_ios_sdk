@@ -119,7 +119,7 @@ Error codes:
 
 ### Localization
 
-User can choose his language on SDK start.
+User can choose SDK language on SDK start.
 
 Supported languages:
 
