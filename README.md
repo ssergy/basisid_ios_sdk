@@ -26,13 +26,10 @@ For starting the SDK you need to receive `api_form_token key` on your backend an
 Backend request example:
 
 ```bash
-$ curl --location --request POST 'https://api.basisid.com/auth/base-check' \
---header 'Accept: application/json' \
---header 'Content-Type: application/json' \
---data-raw '{
-	"key": "API_Key",
-	"secret": "Secret_key_1"
-}'
+$ curl \
+-H "Content-Type: application/json" \
+-X POST -d '{"key": "API_Key", "secret": "Secret_key_1"}' \
+https://api.basisid.com/auth/base-check
 ```
 
 Response:
@@ -75,33 +72,34 @@ For receiving results from SDK you need to create a callback function:
 
 ```swift
 func callback(_ status: String, _ code: String) {
-print(status, code)
-switch status {
-// ok status
-case "ok":
-	switch code {
-	case "video":
-		print("first step completed")
-	case "full":
-		print("verification completed")
-	default:
-		break
-	}
-// error status
-case "error":
-	switch code {
-	case "api":
-		print("api system error")
-	case "step_timeout":
-		print("verification step timeout exceed")
-	case "manual_review":
-		print("profile sent to manual review")
-	default:
-		break
-	}
-default:
-	break
-}
+    print(status, code)
+
+    switch status {
+    // ok status
+    case "ok":
+    	switch code {
+    	case "video":
+    		print("first step completed")
+    	case "full":
+    		print("verification completed")
+    	default:
+    		break
+    	}
+    // error status
+    case "error":
+    	switch code {
+    	case "api":
+    		print("api system error")
+    	case "step_timeout":
+    		print("verification step timeout exceed")
+    	case "manual_review":
+    		print("profile sent to manual review")
+    	default:
+    		break
+    	}
+    default:
+    	break
+    }
 }
 ```
 
@@ -115,7 +113,6 @@ Error codes:
 
 | `Error code` | Description |
 | ----- | ----- |
-| `api` |  |
 | `step_timeout` | The user spent too much time on the second step of verification. |
 | `manual_review` | The user was unable to pass verification and was sent for manual verification.  |
 | `api` | BASIS ID API response error. |
