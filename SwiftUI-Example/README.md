@@ -1,0 +1,1 @@
+Add BasisIDSdk.xcframework to Frameworks section in Xcode and run application. 
